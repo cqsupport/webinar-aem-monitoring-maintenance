@@ -29,7 +29,7 @@ public class DataStoreGCJMXSampleClient {
 	public static void main(String[] args) throws Exception {
 		String userid = "controlRole";
 		String password = "admin";
-		String serverUrl = "service:jmx:rmi:///jndi/rmi://localhost:9000/jmxrmi";
+		String serverUrl = "service:jmx:rmi:///jndi/rmi://127.0.0.1:9000/jmxrmi";
 		String OBJECT_NAME = "com.adobe.granite:type=Repository";
 		String[] buffer = new String[] { userid, password };
 		Hashtable<String, String[]> attributes = new Hashtable<String, String[]>();
