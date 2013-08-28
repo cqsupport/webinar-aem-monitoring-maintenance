@@ -1,0 +1,93 @@
+#!/bin/bash
+#
+# This script configures the start information for this server.
+#
+# The following variables may be used to override the defaults.
+# For one-time overrides the variable can be set as part of the command-line; e.g.,
+#
+#     % CQ_PORT=1234 ./start
+#
+
+# TCP port used for stop and status scripts
+if [ -z "$CQ_PORT" ]; then
+	CQ_PORT=4504
+fi
+
+# hostname of the interface that this server should listen to
+#if [ -z "$CQ_HOST" ]; then
+#	CQ_HOST=
+#fi
+
+# runmode(s)
+if [ -z "$CQ_RUNMODE" ]; then
+	CQ_RUNMODE='author'
+fi
+
+# name of the jarfile
+#if [ -z "$CQ_JARFILE" ]; then
+#	CQ_JARFILE=''
+#fi
+
+# use jaas.config
+#if [ -z "$CQ_USE_JAAS" ]; then
+#	CQ_USE_JAAS='true'
+#fi
+
+# config for jaas
+if [ -z "$CQ_JAAS_CONFIG" ]; then
+	CQ_JAAS_CONFIG='etc/jaas.config'
+fi
+
+# default JVM options
+if [ -z "$CQ_JVM_OPTS" ]; then
+JMX_PWD_FILE=./crx-quickstart/bin/jmx.passwords
+JMX_PORT=9100
+# default JVM options
+CQ_JVM_OPTS='-server -Xmx1024m -XX:MaxPermSize=256M -Djava.awt.headless=true'
+CQ_JVM_OPTS="$CQ_JVM_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=${JMX_PORT} -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=${JMX_PWD_FILE}"
+
+fi
+
+# file size limit (ulimit)
+if [ -z "$CQ_FILE_SIZE_LIMIT" ]; then
+	CQ_FILE_SIZE_LIMIT=8192
+fi
+
+# ------------------------------------------------------------------------------
+# do not configure below this point
+# ------------------------------------------------------------------------------
+
+if [ $CQ_FILE_SIZE_LIMIT ]; then
+	CURRENT_ULIMIT=`ulimit`
+	if [ $CURRENT_ULIMIT != "unlimited" ]; then
+		if [ $CURRENT_ULIMIT -lt $CQ_FILE_SIZE_LIMIT ]; then
+			echo "ulimit ${CURRENT_ULIMIT} is too small (must be at least ${CQ_FILE_SIZE_LIMIT})"
+			exit 1
+		fi
+	fi
+fi
+
+BIN_PATH=$(dirname $0)
+cd $BIN_PATH/..
+if [ -z $CQ_JARFILE ]; then
+	CQ_JARFILE=`ls app/*.jar | head -1`
+fi
+CURR_DIR=$(basename $(pwd))
+cd ..
+START_OPTS="start -c ${CURR_DIR} -i launchpad"
+if [ $CQ_PORT ]; then
+	START_OPTS="${START_OPTS} -p ${CQ_PORT}"
+fi
+if [ $CQ_RUNMODE ]; then
+	CQ_JVM_OPTS="${CQ_JVM_OPTS} -Dsling.run.modes=${CQ_RUNMODE}"
+fi
+if [ $CQ_HOST ]; then
+	CQ_JVM_OPTS="${CQ_JVM_OPTS} -Dorg.apache.felix.http.host=${CQ_HOST}"
+    START_OPTS="${START_OPTS} -a ${CQ_HOST}"
+fi
+if [ $CQ_USE_JAAS ]; then
+    CQ_JVM_OPTS="${CQ_JVM_OPTS} -Djava.security.auth.login.config=${CQ_JAAS_CONFIG}"
+fi
+
+java $CQ_JVM_OPTS -jar $CURR_DIR/$CQ_JARFILE $START_OPTS &
+        echo $! > $CURR_DIR/conf/cq.pid
