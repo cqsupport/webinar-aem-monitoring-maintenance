@@ -3,7 +3,7 @@ Webinar Materials for AEM (CQ) Monitoring and Maintenance
 
 **Sample code for the webinar which was conducted on Wednesday, August 28, 2013.**
 
-**Note:** The sample code is provided for demonstration purposes only.  Please do NOT use it as sample code for your own application development.
+**Note:** The sample code is provided for demonstration purposes only.  It has not been tested in a production environment.  Modifying and testing this code for use in production is up to you.
 
 ### Webinar Recording
 {to be added after webinar}
