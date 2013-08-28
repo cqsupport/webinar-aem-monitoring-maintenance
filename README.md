@@ -6,10 +6,10 @@ Webinar Materials for AEM (CQ) Monitoring and Maintenance
 **Note:** The sample code is provided for demonstration purposes only.  Please do NOT use it as sample code for your own application development.
 
 ### Webinar Recording
-<to be added after webinar>
+{to be added after webinar}
 
 ### Presentation Slides
-<to be added after webinar>
+{to be added after webinar}
 
 Join Adobe experts for an exclusive Adobe CQ Webinar
 ------------------------------------
