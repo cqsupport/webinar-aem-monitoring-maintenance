@@ -12,7 +12,7 @@ For an example ``crx-quickstart/bin/start`` script and a ``jmx.passwords`` file,
 1. Copy the ``start`` and ``jmx.passwords`` files from the ``scripts`` directory to the ``crx-quickstart/bin`` directory of your local AEM (CQ) instance
 2. Restart the instance.
 3. Import the jmxclient-sample project in Eclipse IDE as an existing project.
-3. Run the samples (they are hard-coded to point to 127.0.0.1:9000)
+3. Run the samples. They are hard-coded to point to 127.0.0.1:9000 ("localhost" port 9000).
 
 ### Description
 JMX Client apps:
