@@ -36,7 +36,7 @@ public class WorkflowJMXSampleClient {
 	public static void main(String[] args) throws Exception {
 		String userid = "controlRole";
 		String password = "admin";
-		String serverUrl = "service:jmx:rmi:///jndi/rmi://localhost:9100/jmxrmi";
+		String serverUrl = "service:jmx:rmi:///jndi/rmi://localhost:9000/jmxrmi";
 		String OBJECT_NAME = "com.adobe.granite.workflow:type=Maintenance";
 		String[] buffer = new String[] { userid, password };
 		Hashtable<String, String[]> attributes = new Hashtable<String, String[]>();

@@ -41,7 +41,7 @@ fi
 # default JVM options
 if [ -z "$CQ_JVM_OPTS" ]; then
 JMX_PWD_FILE=./crx-quickstart/bin/jmx.passwords
-JMX_PORT=9100
+JMX_PORT=9000
 # default JVM options
 CQ_JVM_OPTS='-server -Xmx1024m -XX:MaxPermSize=256M -Djava.awt.headless=true'
 CQ_JVM_OPTS="$CQ_JVM_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=${JMX_PORT} -Dcom.sun.management.jmxremote.authenticate=true -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=${JMX_PWD_FILE}"

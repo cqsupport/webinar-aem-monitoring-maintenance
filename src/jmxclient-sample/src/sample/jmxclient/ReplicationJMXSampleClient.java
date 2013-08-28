@@ -32,7 +32,7 @@ public class ReplicationJMXSampleClient {
 	public static void main(String[] args) throws Exception {
 		String userid = "controlRole";
 		String password = "admin";
-		String serverUrl = "service:jmx:rmi:///jndi/rmi://127.0.0.1:9100/jmxrmi";
+		String serverUrl = "service:jmx:rmi:///jndi/rmi://127.0.0.1:9000/jmxrmi";
 		if (!(args.length > 0 && args[0] != null && args[0].length() > 0)) {
 			System.out
 					.println("Error: You must specify an agent id as a parameter.");
