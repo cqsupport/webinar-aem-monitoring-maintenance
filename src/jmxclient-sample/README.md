@@ -14,5 +14,12 @@ For an example ``crx-quickstart/bin/start`` script and a ``jmx.passwords`` file,
 3. Import the jmxclient-sample project in Eclipse IDE as an existing project.
 3. Run the samples (they are hard-coded to point to 127.0.0.1:9000)
 
-Reference:
+### Description
+JMX Client apps:
+* ReplicationJMXSampleClient - Replication agent status info.
+* DataStoreGCJMXSampleClient - Run DataStore GC.
+* TarOptimizationMonitorSampleClient - Run TAR PM Optimization.
+* WorkflowJMXSampleClient - Run all Workflow functions.
+
+### Reference
 * JMX Documentation - http://docs.oracle.com/javase/1.5.0/docs/guide/management/agent.html
