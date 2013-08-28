@@ -6,3 +6,6 @@ To set up JMX remoting on your AEM instances, you must modify the ``crx-quicksta
 ``-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9000 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false``
 
 For an example ``crx-quickstart/bin/start`` script and a ``jmx.passwords`` file, see the ``scripts`` directory.
+
+Reference:
+* JMX Documentation - http://docs.oracle.com/javase/1.5.0/docs/guide/management/agent.html
