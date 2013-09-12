@@ -9,7 +9,8 @@ Webinar Materials for AEM (CQ) Monitoring and Maintenance
 {to be added after webinar}
 
 ### Presentation Slides
-{to be added after webinar}
+Download pptx here: https://sendnow.acrobat.com/?i=woX2QnfBba2YX3kDQa59kA
+Or view online here: https://www.slideshare.net/slideshow/embed_code/26141184
 
 Join Adobe experts for an exclusive Adobe CQ Webinar
 ------------------------------------
