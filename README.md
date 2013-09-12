@@ -6,7 +6,7 @@ Webinar Materials for AEM (CQ) Monitoring and Maintenance
 **Note:** The sample code is provided for demonstration purposes only.  It has not been tested in a production environment.  Modifying and testing this code for use in production is up to you.
 
 ### Webinar Recording
-{to be added after webinar}
+https://my.adobeconnect.com/p9du34yji38/
 
 ### Presentation Slides
 Download pptx here: https://sendnow.acrobat.com/?i=woX2QnfBba2YX3kDQa59kA
